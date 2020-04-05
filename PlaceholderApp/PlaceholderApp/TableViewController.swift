@@ -8,6 +8,7 @@
 
 import UIKit
 import SwiftyJSON
+
 class TableViewController: UITableViewController {
 
     var detailViewController: ViewController? = nil
@@ -15,10 +16,14 @@ class TableViewController: UITableViewController {
     
     var charDic: [PlaceholderLIB] = [PlaceholderLIB]()
 
+   @IBOutlet weak var cellLabel: UILabel!
+   // @IBOutlet weak var cellImage: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-     
+      
+ 
      
       fillChar()
            
@@ -27,33 +32,24 @@ class TableViewController: UITableViewController {
        func fillChar(){
               let urlHolder: URL = URL(string: "https://jsonplaceholder.typicode.com/photos")!
                     
-              let data = try! Data(contentsOf: urlHolder)
-           
-           
-                       
-               let json: JSON = JSON(data)
-           
-              print(json)
-           
-              for (_, value) in json{
+            let data = try! Data(contentsOf: urlHolder)
+            let json: JSON = JSON(data)
+            for (_, value) in json{
                let ColorWall = PlaceholderLIB()
 
                   ColorWall.title = value["title"].stringValue
-                  ColorWall.Image = value["url"]["URL"].stringValue
+                  ColorWall.ThumbImage = value["thumbnailUrl"].stringValue
+                
+                charDic.append(ColorWall)
                   
-                print(ColorWall.title)
-    
               }
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+     
     }
 
    
-    
-    
-
-
     
 
     // MARK: - Table View
@@ -68,10 +64,21 @@ class TableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-        let object = charDic[indexPath.row].title
-        cell.textLabel!.text = object
-        return cell
+        let objectTitle = charDic[indexPath.row].title
+               cell.textLabel!.text = objectTitle
+        let url = URL(string: charDic[indexPath.row].ThumbImage)
+        guard let urlfordata = url else {
+            print("fail to load image")
+            return cell}
+        if let data = try? Data(contentsOf: urlfordata){
+            cell.imageView!.image = UIImage(data: data)
+            }
+           
+return cell
+            }
+        
     }
+    
 
-}
+
 

@@ -12,5 +12,6 @@ class PlaceholderLIB{
     var albumid: Int = 0
     var id: Int = 0
     var title: String = ""
-    var Image: String = ""
+    var MainImage: String = ""
+    var ThumbImage: String = ""
 }
