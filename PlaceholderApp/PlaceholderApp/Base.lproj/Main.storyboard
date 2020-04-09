@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Item 1-->
+        <!--Collection View-->
         <scene sceneID="i9Q-hH-nib">
             <objects>
                 <viewController id="4nO-Yw-MZ5" customClass="ViewController" customModule="PlaceholderApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -73,7 +73,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="peG-xI-fMj"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 1" id="ZOZ-wO-qfS"/>
+                    <tabBarItem key="tabBarItem" title="Collection View" id="ZOZ-wO-qfS"/>
                     <connections>
                         <outlet property="CollectionView" destination="CYU-ZA-TFP" id="nsa-SP-nKG"/>
                     </connections>
@@ -92,7 +92,7 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="DHc-s6-pIV" kind="relationship" relationship="viewControllers" id="v45-8A-cqG"/>
+                        <segue destination="pqi-5J-5Oc" kind="relationship" relationship="viewControllers" id="v45-8A-cqG"/>
                         <segue destination="4nO-Yw-MZ5" kind="relationship" relationship="viewControllers" id="q5g-3T-bUH"/>
                     </connections>
                 </tabBarController>
@@ -100,7 +100,7 @@
             </objects>
             <point key="canvasLocation" x="-2175" y="-163"/>
         </scene>
-        <!--Item-->
+        <!--Table View Controller-->
         <scene sceneID="QNE-j7-wCg">
             <objects>
                 <tableViewController id="DHc-s6-pIV" customClass="TableViewController" customModule="PlaceholderApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -133,10 +133,74 @@
                             <outlet property="delegate" destination="DHc-s6-pIV" id="P1K-zB-RZn"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Item" id="z7f-ZZ-NCK"/>
                     <navigationItem key="navigationItem" id="Nwa-x9-KRn"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ng6-tv-wce" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-347.82608695652175" y="174.77678571428569"/>
+        </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="muX-Oy-be7">
+            <objects>
+                <viewController storyboardIdentifier="DetailViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="oRk-rO-pJV" customClass="DetailViewController" customModule="PlaceholderApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="460-Le-InA">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IBP-Fe-FhG">
+                                <rect key="frame" x="0.0" y="44" width="600" height="600"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dc6-vE-8EC">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="600"/>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="dc6-vE-8EC" firstAttribute="bottom" secondItem="7rL-jc-bpu" secondAttribute="bottom" id="6gC-IA-eB9"/>
+                                    <constraint firstItem="dc6-vE-8EC" firstAttribute="leading" secondItem="7rL-jc-bpu" secondAttribute="leading" id="9vw-rB-7oC"/>
+                                    <constraint firstItem="dc6-vE-8EC" firstAttribute="top" secondItem="vRv-NB-IfH" secondAttribute="top" id="D6e-qf-VAp"/>
+                                    <constraint firstItem="dc6-vE-8EC" firstAttribute="trailing" secondItem="vRv-NB-IfH" secondAttribute="trailing" id="NuP-1T-2ed"/>
+                                    <constraint firstItem="dc6-vE-8EC" firstAttribute="leading" secondItem="vRv-NB-IfH" secondAttribute="leading" id="dXc-8V-8ea"/>
+                                    <constraint firstItem="dc6-vE-8EC" firstAttribute="centerX" secondItem="IBP-Fe-FhG" secondAttribute="centerX" constant="-93" id="f8D-sb-3nz"/>
+                                    <constraint firstAttribute="bottom" secondItem="dc6-vE-8EC" secondAttribute="bottom" constant="-208" id="tFS-2j-3RU"/>
+                                    <constraint firstItem="dc6-vE-8EC" firstAttribute="top" secondItem="vRv-NB-IfH" secondAttribute="top" id="yBJ-0y-W9q"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="vRv-NB-IfH"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="7rL-jc-bpu"/>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="IBP-Fe-FhG" firstAttribute="centerX" secondItem="460-Le-InA" secondAttribute="centerX" constant="93" id="DXc-QW-2Al"/>
+                            <constraint firstItem="IBP-Fe-FhG" firstAttribute="centerY" secondItem="460-Le-InA" secondAttribute="centerY" constant="-104" id="j2c-Dd-r3h"/>
+                            <constraint firstItem="IBP-Fe-FhG" firstAttribute="leading" secondItem="kQc-yg-YNZ" secondAttribute="leading" id="kG2-mP-18w"/>
+                            <constraint firstItem="IBP-Fe-FhG" firstAttribute="top" secondItem="kQc-yg-YNZ" secondAttribute="top" id="nRH-HU-fNJ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="kQc-yg-YNZ"/>
+                    </view>
+                    <connections>
+                        <outlet property="imageField" destination="dc6-vE-8EC" id="9Fg-0H-pj2"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mz7-2R-Se6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="579.71014492753625" y="174.77678571428569"/>
+        </scene>
+        <!--Table View-->
+        <scene sceneID="bxr-VO-hv5">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="pqi-5J-5Oc" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Table View" id="z7f-ZZ-NCK"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Shz-Wh-6Nv">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="DHc-s6-pIV" kind="relationship" relationship="rootViewController" id="mXm-Dc-J5q"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Sxn-Do-WYI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1257.9710144927537" y="174.77678571428569"/>
         </scene>

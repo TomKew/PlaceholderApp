@@ -52,7 +52,6 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     for (_, value) in json{
        let ColorWall = PlaceholderLIB()
 
-          ColorWall.title = value["title"].stringValue
           ColorWall.MainImage = value["url"].stringValue
         
         charDic.append(ColorWall)
