@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		3A7FCE69243DE5C9003820F8 /* CheckInternet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7FCE68243DE5C9003820F8 /* CheckInternet.swift */; };
 		3A7FCE8D243E6B16003820F8 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7FCE8C243E6B16003820F8 /* DetailViewController.swift */; };
+		3A9646D6243F7188007D95B6 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A9646D5243F7188007D95B6 /* SwiftyJSON.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		3AAFB53B2437AA8600F47D1E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AAFB53A2437AA8600F47D1E /* AppDelegate.swift */; };
 		3AAFB53D2437AA8600F47D1E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AAFB53C2437AA8600F47D1E /* SceneDelegate.swift */; };
 		3AAFB53F2437AA8600F47D1E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AAFB53E2437AA8600F47D1E /* ViewController.swift */; };
@@ -18,12 +19,13 @@
 		3AAFB54F2437B11400F47D1E /* PlaceholderLIB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AAFB54E2437B11400F47D1E /* PlaceholderLIB.swift */; };
 		3AAFB5512437D77500F47D1E /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AAFB5502437D77500F47D1E /* TableViewController.swift */; };
 		3AAFB575243A1B5800F47D1E /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AAFB574243A1B5800F47D1E /* CollectionViewCell.swift */; };
-		6E4DD59A483541F48C4A74F7 /* Pods_PlaceholderApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCB5B3AD9FEE53C95AA57716 /* Pods_PlaceholderApp.framework */; };
+		6E4DD59A483541F48C4A74F7 /* Pods_PlaceholderApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCB5B3AD9FEE53C95AA57716 /* Pods_PlaceholderApp.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		3A7FCE68243DE5C9003820F8 /* CheckInternet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckInternet.swift; sourceTree = "<group>"; };
 		3A7FCE8C243E6B16003820F8 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		3A9646D5243F7188007D95B6 /* SwiftyJSON.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SwiftyJSON.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3AAFB5372437AA8600F47D1E /* PlaceholderApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlaceholderApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3AAFB53A2437AA8600F47D1E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3AAFB53C2437AA8600F47D1E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -45,6 +47,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A9646D6243F7188007D95B6 /* SwiftyJSON.framework in Frameworks */,
 				6E4DD59A483541F48C4A74F7 /* Pods_PlaceholderApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -55,6 +58,7 @@
 		00874D1E4F4FBC2CFD413AAD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3A9646D5243F7188007D95B6 /* SwiftyJSON.framework */,
 				DCB5B3AD9FEE53C95AA57716 /* Pods_PlaceholderApp.framework */,
 			);
 			name = Frameworks;
@@ -189,7 +193,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "chmod -x \"${PODS_ROOT}/Target Support Files/Pods-PlaceholderApp/Pods-PlaceholderApp-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PlaceholderApp/Pods-PlaceholderApp-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		7A8EF6FE992B035EBBF36D34 /* [CP] Check Pods Manifest.lock */ = {
